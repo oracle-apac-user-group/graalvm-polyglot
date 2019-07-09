@@ -61,7 +61,7 @@ Estimated time: 45 min
 We recommend you to follow the instructions above and create the app step by step. However, you can go right to the completed example by cloning the git repository.
 
 ```
-$ git clone https://github.com/jweiming/graalvm-micronaut-polyglot
+$ git clone https://github.com/oracle-apac-user-group/graalvm-polyglot.git
 ```
 
 ## Credits
