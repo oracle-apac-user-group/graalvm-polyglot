@@ -15,7 +15,7 @@ First compile and build the project.
 ```
 $ ./gradlew assemble
 ```
-This builds and outputs the ```./build/libs/complete-0.1.jar```. As a standlone Micronaut application, you can run the application by using HotSpot JVM.
+This builds and outputs the ```./build/libs/complete-0.1.jar```. As a standalone Micronaut application, you can run the application by using HotSpot JVM.
 
 ```
 $ java -jar .build/libs/complete-0.1.jar
