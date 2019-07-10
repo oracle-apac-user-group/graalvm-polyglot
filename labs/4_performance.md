@@ -10,6 +10,13 @@ For existing Java applications, GraalVM can provide benefits by running them fas
 
 Let's compare the server start up time and response times. Firstly, we will start up the application using HotSpot JVM method. It is important to notice the server start up time in this case.
 
+First compile and build the project.
+
+```
+$ ./gradlew assemble
+```
+This builds and outputs the ./build/libs/complete-0.1.jar. As a standlone Micronaut application, you can run the application by using HotSpot JVM.
+
 ```
 $ java -jar .build/libs/complete-0.1.jar
 23:06:04.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 996ms. Server Running: http://localhost:8080
@@ -50,7 +57,7 @@ At this point, notice how much faster the server starts up now, as compared to r
 Now issue the following commands.
 
 ```
-$ curl localhost:8080/meetup/random
+$ time curl localhost:8080/meetup/random
 {"name":"GraalVM"}[joche@time curl localhost:8080/meetup/random
 {"name":"Oracle Code One"}
 real	0m0.008s
