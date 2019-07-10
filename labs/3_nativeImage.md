@@ -15,7 +15,7 @@ Let's build the Micronaut application by going to the project directory (i.e. wh
 ```
 $ ./gradlew assemble
 ```
-This builds the ```./build/libs/complete-0.1.jar```. As a standlone Micronaut application, you can run the application by using HotSpot JVM.
+This builds the ```./build/libs/complete-0.1.jar```. As a standalone Micronaut application, you can run the application by using HotSpot JVM.
 
 ```
 $ java -jar ./build/libs/complete-0.1.jar
