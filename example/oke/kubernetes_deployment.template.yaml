@@ -1,0 +1,28 @@
+# This template file will have its environment variables expanded
+# and the .template extension removed by the bash-template Wercker step.
+# See wercker.yml.
+# imagepullsecrets
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mn-graalvm-app
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mn-graalvm-app
+  template:
+    metadata:
+      labels:
+        app: mn-graalvm-app
+    spec:
+      containers:
+        - name: mn-graalvm-cont
+          image: iad.ocir.io/oardc1/micronaut-graalvm-app-repo:1c98f561ffdd1ee131a205c48467ab538e240bd2
+          ports:
+            - name: mn-graalvm-port
+              containerPort: 8080
+              protocol: TCP
+
