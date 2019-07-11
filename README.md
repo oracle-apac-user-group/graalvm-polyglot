@@ -28,10 +28,11 @@ The access pack for the instance (host detail and SSH keys) will be emailed to y
 
 Access the instance with SSH key for **opc** user.
 
-**Note**: For Windows users accessing the instance with Putty, you need to [convert the provided key to Putty format](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/).
+
 
 ## Lab Instructions
 
+##### SSH Connection
 Note that once you have downloaded the access pack, you should be able to access your assigned instance with SSH. To verify that the instance is correct, try checking the version of ```Java```as follows.
 
 ```
@@ -44,6 +45,28 @@ Java HotSpot(TM) GraalVM EE 19.0.0 (build 25.212-b31-jvmci-19-b01, mixed mode)
 ```
 
 You should see that GraalVM is already installed on the instance.
+
+**Note**: For Windows users accessing the instance with Putty, you need to [convert the provided key to Putty format](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/).
+
+##### (Optional) Enabling VNC Server
+
+You do not require VNC connection to complete the workshop. However, if you want to connect and use a GUI for the Linux desktop, enable the VNC Server and connect to it using a VNC client.
+
+```
+$ ssh -i /path/to/id_rsa.txt opc@<server_host>
+$ Last login: Thu Jul 11 06:35:22 2019
+$ vncserver
+xauth:  file /home/opc/.Xauthority does not exist
+
+New 'graalmeetup-1-0:1 (opc)' desktop is graalmeetup-1-0:1
+
+Creating default config /home/opc/.vnc/config
+Starting applications specified in /home/opc/.vnc/xstartup
+Log file is /home/opc/.vnc/graalmeetup-1-0:1.log
+```
+
+Next connect your VNC client to it ```<HOST_IP>:1```. When prompted, use password ```welcome1```.
+
 
 ## Hands-on Labs
 
