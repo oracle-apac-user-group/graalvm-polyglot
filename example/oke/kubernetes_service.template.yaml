@@ -1,0 +1,18 @@
+# This template file will have its environment variables expanded
+# and the .template extension removed by the bash-template Wercker step.
+# See wercker.yml.
+# using commit: ${WERCKER_GIT_COMMIT}
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mn-graalvm-app
+  labels:
+    app: mn-graalvm-app
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: mn-graalvm-app
+  type: LoadBalancer
