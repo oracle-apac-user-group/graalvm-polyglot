@@ -8,6 +8,37 @@ box: oracle/graalvm-ce:19.0.0
 # https://devcenter.wercker.com/development/pipelines/
 
 build:
+  # Steps make up the actions in your pipeline
+  # Read more about steps on our dev center:
+  # https://devcenter.wercker.com/development/steps/
+  steps:
+
+    - script:
+        name: running gradlew assemble
+        cwd: example/
+        code: |
+          chmod 777 ./gradlew
+          ./gradlew assemble
+
+    - script:
+        name: debug Dockerfile
+        cwd: example/
+        code: cat Dockerfile
+
+    #using the context
+    - internal/docker-build:
+        context: example/
+        image-name: micronaut-graalvm-example-img
+
+    - internal/docker-push:
+        username: $USERNAME
+        password: $PASSWORD
+        image-name: micronaut-graalvm-example-img
+        tag: ${WERCKER_GIT_COMMIT}
+        repository: oardc1/micronaut-graalvm-app-repo #TODO change to your OCIR repository name
+        registry: https://iad.ocir.io/v2  #TODO: change to the correct registry
+
+deploy-to-oke:
   box: oracle/graalvm-ce:19.0.0
 
   steps:
@@ -31,8 +62,6 @@ build:
         name: debug
         cwd: $WERCKER_ROOT/example/oke
         code: |
-          chmod 777 $WERCKER_ROOT/example/oke/kubernetes_service.yaml
-          chmod 777 $WERCKER_ROOT/example/oke/kubernetes_deployment.yaml
           ls -l
 
     - script:
@@ -49,7 +78,7 @@ build:
         token: $OKE_TOKEN
         cwd: $WERCKER_ROOT/example/oke/
         insecure-skip-tls-verify: true
-        command: apply -f $WERCKER_ROOT/example/oke/kubernetes_deployment.yaml
+        command: apply -f .
 
     - wercker/kubectl@3.14.0:
         name: set deployment timeout

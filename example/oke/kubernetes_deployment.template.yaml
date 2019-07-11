@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: mn-graalvm-cont
-          image: iad.ocir.io/oardc1/micronaut-graalvm-app-repo:1c98f561ffdd1ee131a205c48467ab538e240bd2
+          image: iad.ocir.io/oardc1/micronaut-graalvm-app-repo:${WERCKER_GIT_COMMIT} #TODO: change the image name <...your image name..>:${WERCKER_GIT_COMMIT}
           ports:
             - name: mn-graalvm-port
               containerPort: 8080
