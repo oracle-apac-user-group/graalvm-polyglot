@@ -83,3 +83,12 @@ public class PolyglotAbsController {
 }
 ```
 
+
+### 5. Compile Project
+
+Once you are done, compile the project and make sure there are no compilation errors at this point.
+
+```
+$ ./gradlew assemble
+```
+
