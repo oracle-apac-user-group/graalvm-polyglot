@@ -61,7 +61,7 @@ The building process will takes some time as it will process all the classes and
 After the docker image is successfully built, it should show up in the list of Docker images locally.
 
 ```
-$ sudo docker image ls
+$ sudo docker images
 ```
 
 ### 3. Running the Container
