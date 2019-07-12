@@ -87,6 +87,10 @@ We recommend you to follow the instructions above and create the app step by ste
 $ git clone https://github.com/oracle-apac-user-group/graalvm-polyglot.git
 ```
 
+## Supplementary Labs
+
+You can learn how to extend on the lab exercises here to [develop microservices with GraalVM Micronaut on Oracle Cloud](https://medium.com/@jeff.salleh/developing-microservices-with-graalvm-micronaut-on-oracle-cloud-b46b0674fe0c).
+
 ## Credits
 
 The labs and materials are referenced to official GraalVM resources.
