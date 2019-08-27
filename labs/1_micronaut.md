@@ -26,10 +26,10 @@ Next, initialize SDKMAN! with the following command:
 $ source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
 
-Now we are ready to install Micronaut (latest stable version).
+Now we are ready to install Micronaut 1.1.4
 
 ```
-$ sdk install micronaut
+$ sdk install micronaut 1.1.4
 ```
 If prompted, make this your default version. After installation is complete it can be tested with:
 
