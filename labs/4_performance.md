@@ -18,7 +18,7 @@ $ ./gradlew assemble
 This builds and outputs the ```./build/libs/complete-0.1.jar```. As a standalone Micronaut application, you can run the application by using HotSpot JVM.
 
 ```
-$ java -jar .build/libs/complete-0.1.jar
+$ java -jar ./build/libs/complete-0.1.jar
 23:06:04.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 996ms. Server Running: http://localhost:8080
 ```
 Now issue the following commands.
